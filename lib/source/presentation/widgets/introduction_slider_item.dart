@@ -3,13 +3,7 @@ import './widgets.dart';
 
 class IntroductionSliderItem {
   /// Logo of the introduction slider.
-  final Widget? logo;
-
-  /// Title of the introduction slider.
-  final Widget? title;
-
-  /// Subtitle of the introduction slider.
-  final Widget? subtitle;
+  final Widget child;
 
   /// Background color of the introduction slider.
   final Color? backgroundColor;
@@ -17,14 +11,9 @@ class IntroductionSliderItem {
   /// Gradient background of the introduction slider.
   final Gradient? gradient;
 
-  /// Background image of the introduction slider.
-  final BackgroundImageDecoration? backgroundImageDecoration;
   const IntroductionSliderItem({
-    this.logo,
-    this.title,
-    this.subtitle,
+    required this.child,
     this.backgroundColor,
     this.gradient,
-    this.backgroundImageDecoration,
   });
 }
