@@ -22,6 +22,8 @@ class IntroductionSlider extends StatefulWidget {
   /// The [Done] that is used to navigate to the target page.
   final Done? done;
 
+  final Widget? topRight;
+
   /// The [DotIndicator] that is used to indicate dots.
   final DotIndicator? dotIndicator;
 
@@ -51,6 +53,7 @@ class IntroductionSlider extends StatefulWidget {
     this.back,
     this.done,
     this.next,
+    this.topRight,
     this.dotIndicator,
   })  : assert((initialPage <= items.length - 1) && (initialPage >= 0),
             "initialPage can't be less than 0 or greater than items length."),
@@ -126,8 +129,11 @@ class _IntroductionSliderState extends State<IntroductionSlider> {
             alignment: Alignment.bottomCenter,
             child: Container(
               height: 80,
-            padding: EdgeInsets.only(left: widget.padding.left, right: widget.padding.right, bottom: widget.padding.bottom),
-            child: Row(
+              padding: EdgeInsets.only(
+                  left: widget.padding.left,
+                  right: widget.padding.right,
+                  bottom: widget.padding.bottom),
+              child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Visibility(
@@ -236,6 +242,12 @@ class _IntroductionSliderState extends State<IntroductionSlider> {
             ),
           ),
         ),
+        if (topRight != null)
+          Positioned(
+            right: widget.padding.right,
+            top: widget.padding.top,
+            child: topRight!,
+          )
       ],
     );
   }
