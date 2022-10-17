@@ -242,11 +242,11 @@ class _IntroductionSliderState extends State<IntroductionSlider> {
             ),
           ),
         ),
-        if (topRight != null)
+        if (widget.topRight != null)
           Positioned(
             right: widget.padding.right,
             top: widget.padding.top,
-            child: topRight!,
+            child: widget.topRight!,
           )
       ],
     );
